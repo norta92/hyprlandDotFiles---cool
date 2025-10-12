@@ -48,22 +48,6 @@ border: 1px solid rgba(130, 0, 200, 0.2);
 transition: all 0.2s ease-in-out;
 }
 
-/* Base animation for transitions */
-@keyframes glow {
-    0% {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3),
-        0 0 4px rgba(130, 0, 200, 0.2);
-    }
-    50% {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4),
-        0 0 8px rgba(130, 0, 200, 0.5);
-    }
-    100% {
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3),
-        0 0 4px rgba(130, 0, 200, 0.2);
-    }
-}
-
 /* Tooltip base styling */
 tooltip {
     background-color: rgba(30, 10, 50, 0.95);
@@ -122,7 +106,6 @@ border-right: 2px solid rgba(130, 0, 200, 0.5);
 background-color: rgba(90, 10, 10, 0.4);
 color: #ff8080;
 border-right: 2px solid rgba(200, 0, 0, 0.5);
-animation: glow 2s infinite;
 }
 
 /* Pulseaudio module - audio focused */
@@ -167,7 +150,6 @@ margin: 4px 6px;
 
 #tray > .needs-attention {
 -gtk-icon-effect: highlight;
-animation: glow 2s infinite;
 }
 
 /* Hover effects for all modules - shared interactive behavior */
@@ -193,18 +175,6 @@ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5),
 0 0 4px rgba(130, 0, 200, 0.2);
 }
 
-/* Transition animations for state changes */
-@keyframes pulse {
-    0% { opacity: 0.85; }
-    50% { opacity: 1; }
-    100% { opacity: 0.85; }
-}
-
-#network.disconnected,
-#pulseaudio.muted {
-animation: pulse 2s infinite ease-in-out;
-}
-
 /* Button-like elements with press effect */
 #custom-previous:active,
 #custom-next:active {
@@ -217,18 +187,6 @@ box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 #waybar *:focus {
 outline: 2px solid rgba(180, 30, 220, 0.8);
 outline-offset: 2px;
-}
-
-/* Transition effects for clicks */
-@keyframes click-ripple {
-    0% {
-        box-shadow: 0 0 0 0 rgba(180, 30, 220, 0.1),
-        0 0 0 1px rgba(180, 30, 220, 0.1);
-    }
-    100% {
-        box-shadow: 0 0 0 10px rgba(180, 30, 220, 0),
-        0 0 0 3px rgba(180, 30, 220, 0);
-    }
 }
 
 /* Workspaces styling */
@@ -279,7 +237,6 @@ color: #ffffff;
 font-weight: bold;
 border: 1px solid rgba(255, 50, 80, 0.7);
 box-shadow: 0 0 10px rgba(255, 50, 80, 0.6);
-animation: pulse 1s infinite;
 }
 
 /* Special animation for workspace switching */
@@ -289,9 +246,11 @@ animation: pulse 1s infinite;
     100% { opacity: 0.7; }
 }
 
+/*
 #workspaces button.active {
 animation: workspace-switch 2s ease-in-out infinite;
 }
+*/
 
 /* Media player module styling */
 #mpris {
@@ -379,36 +338,12 @@ margin-top: 7px;
 margin-bottom: 5px;
 }
 
-/* Animation for playing state */
-@keyframes playing-pulse {
-    0% { border-color: rgba(100, 220, 100, 0.5); }
-    50% { border-color: rgba(100, 220, 100, 0.8); }
-    100% { border-color: rgba(100, 220, 100, 0.5); }
-}
-
-#mpris.playing {
-animation: playing-pulse 3s infinite ease-in-out;
-}
-
 /* Custom glow effects for specific elements */
 #clock,
 #custom-power {
 background-color: rgba(70, 20, 110, 0.4);
 box-shadow: 0 0 10px rgba(130, 30, 200, 0.4),
 inset 0 0 8px rgba(130, 30, 200, 0.2);
-}
-
-/* Pulsing animation for critical states */
-@keyframes critical-pulse {
-    0% { background-color: rgba(130, 20, 50, 0.5); }
-    50% { background-color: rgba(180, 30, 70, 0.7); }
-    100% { background-color: rgba(130, 20, 50, 0.5); }
-}
-
-#network.disconnected,
-#battery.critical,
-#pulseaudio.muted {
-animation: critical-pulse 1.5s infinite ease-in-out;
 }
 
 /* Enhanced tooltip styling */
@@ -434,6 +369,7 @@ tooltip label {
 }
 
 /* Background shimmer effect */
+/*
 @keyframes background-shimmer {
     0% {
         background-position: 0% 50%;
@@ -445,6 +381,7 @@ tooltip label {
         background-position: 0% 50%;
     }
 }
+*/
 
 #waybar {
 background-image: linear-gradient(135deg,
@@ -454,7 +391,7 @@ background-image: linear-gradient(135deg,
                                   rgba(100, 0, 160, 0.25) 80%,
                                   rgba(40, 0, 80, 0.2) 100%);
 background-size: 400% 400%;
-animation: background-shimmer 15s ease infinite;
+/*animation: background-shimmer 15s ease infinite;*/
 }
 
 /* Cyberpunk module styling with angled borders */
